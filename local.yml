@@ -5,7 +5,9 @@
         name: "{{ inventory_hostname }}"
         groups: "{{ host_vars[inventory_hostname].pull_groups }}"
       changed_when: False
+
+    - name:
       debug:
-        msg: "{{ check_hostname }}"
+        msg: "{{ inventory_hostname }}"
 
 - import_playbook: playbook.yml
