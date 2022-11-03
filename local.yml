@@ -1,7 +1,8 @@
 - hosts: all
   tasks:
     - name: print current hostname
-      script: "echo {{inventory_hostname}}"
+      cmd: "echo {{inventory_hostname}}"
+
     - name: add hosts to inventory group
       add_host:
         name: "{{ inventory_hostname }}"
