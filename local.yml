@@ -6,6 +6,13 @@
         groups: "{{hostvars[inventory_hostname].pull_groups}}"
       changed_when: False
 
+
+    - name: add hosts to inventory group
+      add_host:
+        name: "{{ inventory_hostname }}"
+        groups: "{{hostvars[inventory_hostname].dev_groups}}"
+      changed_when: False
+
     - name: debug inventory hostname
       debug:
         msg: "{{hostvars[inventory_hostname]}}"
