@@ -3,7 +3,7 @@
     - name: add hosts to inventory group
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{ host_vars[inventory_hostname].pull_groups }}"
+        groups: "{{ hostvars[inventory_hostname].pull_groups }}"
       changed_when: False
 
     - name:
