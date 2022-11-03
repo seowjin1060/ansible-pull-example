@@ -12,6 +12,7 @@ inventory_defaults = {
     'ansible_ssh_port': 22,
     'ansible_ssh_user': 'root',
 }
+print("inventory default")
 
 ansibledir = os.path.dirname(os.path.realpath(__file__))
 host_vars = os.path.join(ansibledir, 'host_vars')
