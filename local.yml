@@ -1,9 +1,11 @@
 - hosts: all
   tasks:
-    - name: add hosts to inventory groups
+    - name: print current hostname
+      script: "echo {{inventory_hostname}}"
+    - name: add hosts to inventory group
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{ hostvars[inventory_hostname].pull_groups }}"
+        groups: "{{ host_vars[inventory_hostname].pull_groups }}"
       changed_when: False
 
 - import_playbook: playbook.yml
