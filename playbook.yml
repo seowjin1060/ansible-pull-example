@@ -13,6 +13,16 @@
     - debug:
         msg: "I'm in group 'onlybar'"
 
+- hosts: apisix
+  tasks:
+    - debug:
+        msg: "I'm in group 'apisix'"
+
+- hosts: etcd
+  tasks:
+    - debug:
+        msg: "I'm in group 'etcd'"
+
 - name: configure ansible-pull
   hosts: all
   become: yes
