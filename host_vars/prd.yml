@@ -11,6 +11,8 @@ all:
             apisix-error-log-dir : /var/log/error.log
           etcd:
             etcd-client-port: 2379
+          hosts:
+            - localhost
     wonjin:
       etcd
     test-server:
