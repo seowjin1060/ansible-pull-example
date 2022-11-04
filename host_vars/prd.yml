@@ -1,7 +1,11 @@
 ---
-wonjin:
-  etcd
-test-server:
-  apisix
+pull_groups:
+  test
+
+dev_groups:
+  apisix 
   etcd
 
+prd:
+  apisix 
+  etcd
