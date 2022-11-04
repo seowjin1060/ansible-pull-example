@@ -18,10 +18,10 @@
     - debug:
         msg: "I'm in group 'apisix'"
 
-- hosts: etcd
+- hosts: wonjin
   tasks:
     - debug:
-        msg: "I'm in group 'etcd'"
+        msg: "I'm host wonjin''"
 
 - name: configure ansible-pull
   hosts: all
