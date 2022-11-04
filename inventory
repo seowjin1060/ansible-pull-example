@@ -18,7 +18,7 @@ ansibledir = os.path.dirname(os.path.realpath(__file__))
 host_vars = os.path.join(ansibledir, 'host_vars')
 
 ansible_groups = coll.defaultdict(list)
-ansible_hosts = {"prd": "wonjin"}
+ansible_hosts = {}
 
 for entry in os.scandir(host_vars):
     if entry.name.endswith('.yml'):
