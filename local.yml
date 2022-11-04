@@ -3,7 +3,7 @@
     - name: add hosts to inventory group
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{hostvars[inventory_hostname].pull_groups}}"
+        group: "{{hostvars[inventory_hostname].pull_groups}}"
       changed_when: False
 
     - name: add hosts to inventory group
@@ -14,11 +14,11 @@
 
     - name: debug inventory hostname
       debug:
-        msg: "{{hostvars[inventory_hostname.dev_groups]}}"
+        msgs: "{{hostvars[inventory_hostname.dev_groups]}}"
 
 
-#    - name: debug inventory hostname
-#      debug:
-#        msg: "{{hostvars[inventory_hostname.dev_groups]}}"
+    - name: debug inventory hostname
+      debug:
+        msg: "{{ inventory_hostname }}"
 
 - import_playbook: playbook.yml

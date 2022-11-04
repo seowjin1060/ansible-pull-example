@@ -1,13 +1,7 @@
 ---
 
 pull_groups:
-  mygrous:
-      vars:
-        test: "test_var"
-
-  onlyfoo:
-      vars:
-        test: "test_var"
+  test
 
 dev_groups:
   apisix 
