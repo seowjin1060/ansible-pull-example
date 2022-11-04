@@ -14,7 +14,7 @@
 
     - name: debug inventory hostname
       debug:
-      msg: "{{hostvars[inventory_hostname.dev_groups]}}"
+        msg: "{{hostvars[inventory_hostname.dev_groups]}}"
 
 
 #    - name: debug inventory hostname
