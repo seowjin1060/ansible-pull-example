@@ -1,18 +1,18 @@
 - hosts: all
   tasks:
-    - name: add hosts to inventory group
+    - name: add hosts to inventory pull groups
       add_host:
         name: "{{ inventory_hostname }}"
         group: "{{hostvars[inventory_hostname].pull_groups}}"
       changed_when: False
 
-    - name: add hosts to inventory group
+    - name: add hosts to inventory dev groups
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{hostvars[inventory_hostname].dev_groups}}"
       changed_when: False
 
-    - name: add hosts to inventory group
+    - name: add hosts to inventory prd groups
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{hostvars[inventory_hostname].prd}}"
