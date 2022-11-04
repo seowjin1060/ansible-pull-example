@@ -29,6 +29,7 @@ for entry in os.scandir(host_vars):
             yml = yaml.safe_load(stream)
 
         ansible_hosts[host] = { 'ansible_host': host }
+        print(ansible_hosts)
         for group in yml.get('pull_groups', []):
             ansible_groups[group].append(host)
 
