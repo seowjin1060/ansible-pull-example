@@ -7,3 +7,7 @@ pull_groups:
 dev_groups:
   apisix 
   etcd
+
+prd:
+  apisix 
+  etcd
