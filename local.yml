@@ -12,7 +12,7 @@
         groups: "{{hostvars[inventory_hostname].dev_groups}}"
       changed_when: False
 
-  
+
 
     - name: debug inventory hostname
       debug:

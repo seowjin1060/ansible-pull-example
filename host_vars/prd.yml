@@ -1,7 +1,7 @@
 ---
 all:
   children:
-    wonjin:
+    test:
         vars:
           ip: 127.0.0.1
           apisix:
@@ -11,7 +11,8 @@ all:
             apisix-error-log-dir : /var/log/error.log
           etcd:
             etcd-client-port: 2379
-
+    wonjin:
+      etcd
     test-server:
       apisix
       etcd
