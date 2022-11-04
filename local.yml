@@ -13,9 +13,8 @@
       changed_when: False
 
 
-
-    - name: debug inventory hostname
-      debug:
-        msg: "{{hostvars[inventory_hostname.dev_groups]}}"
+#    - name: debug inventory hostname
+#      debug:
+#        msg: "{{hostvars[inventory_hostname.dev_groups]}}"
 
 - import_playbook: playbook.yml
