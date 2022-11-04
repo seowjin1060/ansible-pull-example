@@ -15,7 +15,7 @@
     - name: add hosts to inventory group
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{hostvars[inventory_hostname].wonjin}"
+        groups: "{{hostvars[inventory_hostname].wonjin}}"
       changed_when: False
 
     - name: debug inventory hostname
