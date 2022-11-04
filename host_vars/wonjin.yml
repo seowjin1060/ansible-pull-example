@@ -1,9 +1,9 @@
 ---
 
 pull_groups:
-  - mygroup
-  - onlyfoo
+  mygroup
+  onlyfoo
 
 dev_groups:
-  - apisix
-  - etcd
+  apisix 
+  etcd

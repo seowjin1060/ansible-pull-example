@@ -46,7 +46,7 @@ elif args.list:
     # format ref: https://docs.ansible.com/ansible/latest/dev_guide/developing_inventory.html
     print(json.dumps({
         '_meta': {
-            'hostvars': { **ansible_hosts }
+            'hostvars': { ansible_hosts }
         },
         'all': {
             'hosts': list(ansible_hosts.keys()),

@@ -1,0 +1,14 @@
+prd:
+  wonjin:
+    vars:
+      ip: 127.0.0.1
+      apisix:
+        apisix-port: 9083
+        apisix-prometheus : false
+        apisix-access-log-dir : /var/log/access.log
+        apisix-error-log-dir : /var/log/error.log
+      etcd:
+        etcd-client-port: 2379
+
+  test-server:
+
