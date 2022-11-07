@@ -3,7 +3,7 @@
     - name: add hosts to inventory groups
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{ inventory_hostname}}[0:1]"
+        groups: "{{ inventory_hostname[0:2]}}"
       changed_when: False
 
 #    - name: add hosts to inventory prd groups
@@ -14,7 +14,15 @@
 
     - name: debug inventory hostname
       debug:
-        arr: "{{ inventory_hostname}}"
-        msg: "{{ inventory_hostname }} arr[0:1]"
+        msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
+
+#- hosts: localhost
+#  tasks:
+#    - name: test variables
+#      debug:
+#        msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
 
 - import_playbook: playbook.yml
+
+
+
