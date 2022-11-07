@@ -1,7 +1,7 @@
 - hosts: ansible-test
   tasks:
     - debug:
-        msg: "I'm host wonjin''"
+        msg: "I'm host ansible-test''"
 
 - name: configure ansible-pull
   hosts: all

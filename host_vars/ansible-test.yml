@@ -1,13 +1,7 @@
 ---
+ansible-test:
+  vars:
+    - env: dev
 
-pull_groups:
-  test
 
-dev_groups:
-  apisix 
-  etcd
-
-prd:
-  apisix 
-  etcd
 
