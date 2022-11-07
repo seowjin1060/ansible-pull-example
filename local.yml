@@ -6,11 +6,12 @@
         name: "{{ inventory_hostname }}"
         groups: "{{ inventory_hostname[0:2]}}"
         prometheus: True
-
       changed_when: False
 
     - name: load host vars
-      include_vars: "./hosts/{{ inventory_hostname }}.yml"
+      include_vars:
+        file: "./hosts/{{ inventory_hostname }}.yml"
+        name: hostvar
 
 #    - name: add hosts to inventory prd groups
 #      add_host:
@@ -31,7 +32,11 @@
     - name: debug host parameters
       debug:
         msg: "{{prometheus}} , {{vars}}"
-
+- hosts: drapigw
+  tasks:
+    - name : debug host var
+      debug:
+      msg: "{{hostvar}}"
 
 
 - hosts: localhost
