@@ -32,9 +32,10 @@
     - name: debug host parameters
       debug:
         msg: "{{prometheus}} , {{vars}}"
+
 - hosts: drapigw
   tasks:
-    - name : debug host var
+    - name: debug host var
       debug:
       msg: "{{hostvar}}"
 
