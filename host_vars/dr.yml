@@ -1,7 +1,14 @@
 ---
 dr:
+  hosts:
+    drapigw:
+      vars:
+        testvar: a
+        ip: 127.0.0.1
   vars:
     - env: dev
+
+
 
 
 
