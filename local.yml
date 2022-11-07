@@ -1,14 +1,16 @@
 - hosts: all
   tasks:
+
     - name: add hosts to inventory groups
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{ inventory_hostname[0:2]}}"
         prometheus: True
-        vars:
-          include_vars:
-             "./hosts/{{ inventory_hostname }}.yml"
+
       changed_when: False
+
+    - name: load host vars
+      include_vars: "./hosts/{{ inventory_hostname }}.yml"
 
 #    - name: add hosts to inventory prd groups
 #      add_host:
