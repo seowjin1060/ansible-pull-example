@@ -3,7 +3,7 @@
     - name: add hosts to inventory dev groups
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{hostvars[inventory_hostname].{{ inventory_hostname }}}}"
+        groups: "{{ inventory_hostname }}"
       changed_when: False
 
     - name: add hosts to inventory prd groups
