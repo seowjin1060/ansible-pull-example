@@ -16,7 +16,7 @@
 
     - name: debug inventory hostname
       debug:
-        msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
+        msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }} "
 
 #    - name: debug hostvars
 #      debug:
@@ -25,7 +25,7 @@
 - hosts: drapigw
   tasks:
     - name: debug host parameters
-    - debug:
+      debug:
         msg: "{{prometheus}}"
 
 
