@@ -1,9 +1,9 @@
 - hosts: all
   tasks:
-    - name: add hosts to inventory dev groups
+    - name: add hosts to inventory groups
       add_host:
         name: "{{ inventory_hostname }}"
-        groups: "{{ inventory_hostname }}"
+        groups: "{{ inventory_hostname}}[0:1]"
       changed_when: False
 
 #    - name: add hosts to inventory prd groups
