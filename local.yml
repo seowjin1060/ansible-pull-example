@@ -14,6 +14,6 @@
 
     - name: debug inventory hostname
       debug:
-        msg: "{{ inventory_hostname }}"
+        msg: "{{ inventory_hostname }} , {{ inventory_hostname}}[0:1]"
 
 - import_playbook: playbook.yml
