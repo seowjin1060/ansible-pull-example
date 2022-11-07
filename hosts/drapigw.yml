@@ -1,3 +1,4 @@
 env: dev
 ip: 127.0.0.1
 prometheus: false
+import_test: true
