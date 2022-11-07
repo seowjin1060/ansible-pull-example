@@ -4,7 +4,7 @@
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{ inventory_hostname[0:2]}}"
-        vars_files:
+        include_vars:
           - "./hosts/{{ inventory_hostname }}.yml"
       changed_when: False
 
