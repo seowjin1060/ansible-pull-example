@@ -9,3 +9,4 @@
   roles:
     - role: ansible-pull
       ansible_pull_url: https://git.example.com/ansible.git
+
