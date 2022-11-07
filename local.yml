@@ -28,7 +28,7 @@
   tasks:
     - name: debug host parameters
       debug:
-        msg: "{{prometheus}}"
+        msg: "{{prometheus}} , {{vars}}"
 
 
 
