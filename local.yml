@@ -53,10 +53,7 @@
     roles:
       - role: apisix
         ansible_pull_url: https://git.example.com/ansible.git
-    when: "apisix" in {{service}}
-
-
-
+   # when: "apisix" in {{service}}
 
 - hosts: localhost
   tasks:
