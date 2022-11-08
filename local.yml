@@ -35,7 +35,6 @@
 #    when: "etcd" in {{service}}
 
     - name: run ansible role
-      hosts: all
       become: yes
       roles:
         - role: apisix
