@@ -25,19 +25,6 @@
       debug:
         msg: "{{hostvar.env}}"
 
-###########   ADD HOST & LOAD VARIABLES #############
-- hosts: localhost
-  tasks:
-  - name: run apisix configuration
-    template:
-      src: apisix/templates/
-      dest: /etc/ssh/sshd_config
-      owner: root
-      group: root
-      mode: '0644'
-      validate: /usr/sbin/sshd -t -f %s
-      backup: yes
-
 ###########   Run Rolebooks for host   #############
 #  - name: run ansible role
 #    hosts: all
