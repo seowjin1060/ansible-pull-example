@@ -1,4 +1,7 @@
 env: dev
 ip: 127.0.0.1
+service:
+  - "apisix"
+  - "etcd"
 prometheus: false
 import_test: true

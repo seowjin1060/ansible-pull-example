@@ -1,0 +1,24 @@
+- hosts: all
+  tasks:
+    - name: pull apisix source from git
+      ansible.builtin.git:
+        repo: "https://github.com/apache/apisix.git"
+        dest: /Users/a80124165/Downloads/gitlab
+      when: {{service}} == "apisix"
+
+    - name: "init apisix configuration"
+      template:
+        src: //foo.j2
+        dest: /etc/file.conf
+        owner: bin
+        group: wheel
+        mode: '0644'
+
+    - name: "reload apisix"
+      cmd: "service reload apisix"
+      when: {{service}} == "apisix"
+
+    - name: testing service status
+      cmd: "service status apisix"
+
+

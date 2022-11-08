@@ -1,34 +1,22 @@
 - hosts: all
   tasks:
-
+###########   ADD HOST & LOAD VARIABLES #############
     - name: add hosts to inventory groups
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{ inventory_hostname[0:2]}}"
         prometheus: True
-      changed_when: False
+      changed_when: false
 
     - name: load host vars
       include_vars:
         file: "./hosts/{{ inventory_hostname }}.yml"
         name: hostvar
 
-#    - name: add hosts to inventory prd groups
-#      add_host:
-#        name: "{{ inventory_hostname }}"
-#        groups: "{{hostvars[inventory_hostname].prd}}"
-#      changed_when: False
-
     - name: debug inventory hostname
       debug:
         msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }} "
 
-#    - name: debug hostvars
-#      debug:
-#        msg: "hostvars[inventory_hostname]"
-
-- hosts: drapigw
-  tasks:
     - name: debug host parameters
       debug:
         msg: "{{prometheus}} , {{vars}}"
@@ -37,11 +25,45 @@
       debug:
         msg: "{{hostvar.env}}"
 
+###########   ADD HOST & LOAD VARIABLES #############
+- hosts: localhost
+  tasks:
+  - name: run apisix configuration
+    template:
+      src: apisix/templates/
+      dest: /etc/ssh/sshd_config
+      owner: root
+      group: root
+      mode: '0644'
+      validate: /usr/sbin/sshd -t -f %s
+      backup: yes
+
+###########   Run Rolebooks for host   #############
+#  - name: run ansible role
+#    hosts: all
+#    become: yes
+#    roles:
+#      - role: etcd
+#        ansible_pull_url: https://git.example.com/ansible.git
+#    when: "etcd" in {{service}}
+
+  - name: run ansible role
+    hosts: all
+    become: yes
+    roles:
+      - role: apisix
+        ansible_pull_url: https://git.example.com/ansible.git
+    when: "apisix" in {{service}}
+
+
+
+
 - hosts: localhost
   tasks:
     - name: test variables
       debug:
         msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
+
     - name: debug inventory hostname
       debug:
         msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
@@ -49,6 +71,19 @@
     - name: debug hostvars
       debug:
         msg: "{{hostvars[inventory_hostname]}}"
+
+
+#    - name: add hosts to inventory prd groups
+#      add_host:
+#        name: "{{ inventory_hostname }}"
+#        groups: "{{hostvars[inventory_hostname].prd}}"
+#      changed_when: False
+#    - name: debug hostvars
+#      debug:
+#        msg: "hostvars[inventory_hostname]"
+
+
+
 
 - import_playbook: playbook.yml
 
