@@ -37,7 +37,7 @@
     - name: run ansible role
       become: yes
       roles:
-        - role: apisix
+        role: apisix
      # when: "apisix" in {{service}}
 
 - hosts: localhost
