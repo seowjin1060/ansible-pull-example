@@ -28,7 +28,7 @@
     - name : run role for apisix
       include_role:
           name: apisix
-      #when:
+      when: "apisix" in {{service}}
 
 ###########   Run Rolebooks for host   #############
 #  - name: run etcd role

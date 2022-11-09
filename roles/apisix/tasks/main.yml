@@ -11,19 +11,15 @@
         src:  {{item}}
         dest: /usr/local/apisix/config.yaml
         mode: '0644'
-      when: {{service}} == "apisix"
 
     - name: "reload apisix"
       ansible.builtin.command: "service reload apisix"
-      when: {{service}} == "apisix"
 
     - name: "reload apisix"
       ansible.builtin.command: "service reload apisix"
-      when: {{service}} == "apisix"
 
     - name: testing service status
       cmd: "service status apisix"
-
 
 
 - name: install units for apisix
