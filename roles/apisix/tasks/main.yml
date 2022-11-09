@@ -7,7 +7,7 @@
 - name: "init apisix configuration"
   template:
     src: config.yaml.j2
-    dest: /usr/local/apisix/config.yaml
+    dest: /usr/local/apisix/conf/config.yaml
     mode: '0644'
 
 - name: "restart apisix"
