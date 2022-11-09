@@ -2,7 +2,7 @@
 - name: pull apisix source from git
   ansible.builtin.git:
     repo: "https://github.com/apache/apisix.git"
-    dest: /usr/local
+    dest: /usr/local/apisix/
 
 - name: "init apisix configuration"
   template:
