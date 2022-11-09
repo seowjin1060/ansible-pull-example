@@ -26,7 +26,6 @@
         msg: "{{hostvar.env}}"
 
     - name : run role for apisix
-      become: yes
       include_role:
           name: apisix
       #when:
