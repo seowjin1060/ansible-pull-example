@@ -19,7 +19,7 @@
 
     - name: debug host parameters
       debug:
-        msg: "{{prometheus}} , {{vars}}"
+        msg: "{{prometheus}} 
 
 #    - name : run role for apisix
 #      include_role:
