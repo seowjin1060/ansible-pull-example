@@ -27,8 +27,9 @@
 
     - name : run role for apisix
       become: yes
-      roles:
-        role: apisix
+      include_role:
+          name: apisix
+      #when:
 
 ###########   Run Rolebooks for host   #############
 #  - name: run ansible role
