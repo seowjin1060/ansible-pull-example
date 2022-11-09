@@ -24,7 +24,7 @@
     - name: debug host var
       debug:
         msg: "{{hostvar.env}}"
-        
+
     - name : run role for apisix
       become: yes
       roles:
