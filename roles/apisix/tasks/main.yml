@@ -1,32 +1,30 @@
 ---
-- hosts: all
-  tasks:
-    - name: pull apisix source from git
-      ansible.builtin.git:
-        repo: "https://github.com/apache/apisix.git"
-        dest: /usr/local
+- name: pull apisix source from git
+  ansible.builtin.git:
+    repo: "https://github.com/apache/apisix.git"
+    dest: /usr/local
 
-    - name: "init apisix configuration"
-      template:
-        src: apisix.conf.j2
-        dest: /usr/local/apisix/config.yaml
-        mode: '0644'
-
-    - name: "reload apisix"
-      ansible.builtin.command: "service reload apisix"
-
-    - name: "reload apisix"
-      ansible.builtin.command: "service reload apisix"
-
-    - name: testing service status
-      cmd: "service status apisix"
-
-
-- name: install units for apisix
+- name: "init apisix configuration"
   template:
-    dest: /etc/systemd/system
-    src: "{{ item }}"
-  loop:
-    - apisix.service
+    src: apisix.conf.j2
+    dest: /usr/local/apisix/config.yaml
+    mode: '0644'
+
+- name: "restart apisix"
+  ansible.builtin.command: "service restart apisix"
+
+- name: "reload apisix"
+  ansible.builtin.command: "service reload apisix"
+
+- name: testing service status
+  cmd: "service status apisix"
+
+
+#- name: install units for apisix
+#  template:
+#    dest: /etc/systemd/system
+#    src: "{{ item }}"
+#  loop:
+#    - apisix.service
 
 
