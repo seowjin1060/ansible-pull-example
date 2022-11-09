@@ -20,10 +20,10 @@
       debug:
         msg: "{{hostvar.prometheus}}"
 
-#    - name : run role for apisix
-#      include_role:
-#          name: apisix
-#      when: "apisix" in {{service}}
+    - name : run role for apisix
+      include_role:
+        name: apisix
+      when: "apisix" in {{hostvar.service}}
 
 ###########   Run Rolebooks for host   #############
 #  - name: run etcd role
