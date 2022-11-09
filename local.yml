@@ -5,7 +5,6 @@
       add_host:
         name: "{{ inventory_hostname }}"
         groups: "{{ inventory_hostname[0:2]}}"
-        prometheus: True
       changed_when: false
 
     - name: load host vars
