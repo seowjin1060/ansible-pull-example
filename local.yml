@@ -1,7 +1,4 @@
 - hosts: all
-  become: yes
-  roles:
-    role: apisix
   tasks:
 ###########   ADD HOST & LOAD VARIABLES #############
     - name: add hosts to inventory groups
@@ -27,6 +24,11 @@
     - name: debug host var
       debug:
         msg: "{{hostvar.env}}"
+        
+    - name : run role for apisix
+      become: yes
+      roles:
+        role: apisix
 
 ###########   Run Rolebooks for host   #############
 #  - name: run ansible role
@@ -38,7 +40,8 @@
 #    when: "etcd" in {{service}}
 
 
-     # when: "apisix" in {{service}}
+     # when: "apisix" in {{service}
+
 
 - hosts: localhost
   tasks:
