@@ -20,10 +20,11 @@
       debug:
         msg: "{{hostvar.prometheus}}, {{hostvar.service}}"
 
-#    - name : run role for apisix
-#      include_role:
-#        name: apisix
-#      when: "apisix" in {{hostvar.service}}
+    - name : run role for apisix
+      include_role:
+        name: apisix
+
+      when: hostlist|selectattr("name", "equalto", "ansible")|list|length != 0
 
 ###########   Run Rolebooks for host   #############
 #  - name: run etcd role
