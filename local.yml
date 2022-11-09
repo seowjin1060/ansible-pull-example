@@ -32,7 +32,7 @@
       #when:
 
 ###########   Run Rolebooks for host   #############
-#  - name: run ansible role
+#  - name: run etcd role
 #    hosts: all
 #    become: yes
 #    roles:
