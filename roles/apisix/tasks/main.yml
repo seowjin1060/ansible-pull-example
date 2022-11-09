@@ -6,7 +6,7 @@
 
 - name: "init apisix configuration"
   template:
-    src: apisix.conf.j2
+    src: config.yaml.j2
     dest: /usr/local/apisix/config.yaml
     mode: '0644'
 
@@ -15,9 +15,6 @@
 
 - name: "reload apisix"
   ansible.builtin.command: "service reload apisix"
-
-
-
 
 #- name: install units for apisix
 #  template:
