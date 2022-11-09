@@ -16,8 +16,7 @@
 - name: "reload apisix"
   ansible.builtin.command: "service reload apisix"
 
-- name: testing service status
-  cmd: "service status apisix"
+
 
 
 #- name: install units for apisix
