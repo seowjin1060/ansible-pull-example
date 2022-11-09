@@ -24,7 +24,7 @@
       include_role:
         name: apisix
 
-      when: hostvar|selectattr("name", "equalto", "ansible")|list|length != 0
+      when: hostvar.service|selectattr("name", "equalto", "ansible")|list|length != 0
 
 ###########   Run Rolebooks for host   #############
 #  - name: run etcd role
