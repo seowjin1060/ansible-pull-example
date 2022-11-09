@@ -49,10 +49,6 @@
       debug:
         msg: "{{ inventory_hostname }} {{ inventory_hostname[0:2] }}  "
 
-    - name: debug hostvars
-      debug:
-        msg: "{{hostvars[inventory_hostname]}}"
-
 
 #    - name: add hosts to inventory prd groups
 #      add_host:
