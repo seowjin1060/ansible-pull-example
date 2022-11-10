@@ -9,7 +9,7 @@
 
     - name: load host vars
       include_vars:
-        file: "./hosts/{{ inventory_hostname }}.yml"
+        file: "./hosts/{{ inventory_hostname[0:2] }}/{{ inventory_hostname }}.yml"
         name: hostvar
 
     - name: debug inventory hostname
