@@ -1,4 +1,9 @@
 ---
+- name: load host vars
+  include_vars:
+    file: "./hosts/{{ inventory_hostname }}.yml"
+    name: hostvar
+
 - name: pull apisix source from git
   ansible.builtin.git:
     repo: "https://github.com/apache/apisix.git"
