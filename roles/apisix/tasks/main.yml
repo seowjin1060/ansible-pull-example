@@ -4,6 +4,10 @@
     file: "./hosts/{{ inventory_hostname }}.yml"
     name: hostvar
 
+- name: debug host parameters
+  debug:
+    msg: "{{hostvar.prometheus}}, {{hostvar.service}}"
+
 - name: pull apisix source from git
   ansible.builtin.git:
     repo: "https://github.com/apache/apisix.git"
