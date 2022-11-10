@@ -6,7 +6,7 @@
 
 - name: debug host parameters
   debug:
-    msg: "{{hostvar.prometheus}}, {{hostvar.service}}"
+    msg: "{{hostvar.prometheus}}, {{hostvar.service}} , {{hostvar.apisix}}"
 
 - name: pull apisix source from git
   ansible.builtin.git:
