@@ -25,10 +25,11 @@
         name: apisix
       when: hostvar.service|selectattr("name", "equalto", "apisix")|list|length != 0
 
-    - name: run role for etcd
-      include_role:
-        name: etcd
-      when: hostvar.service|selectattr("name", "equalto", "etcd")|list|length != 0
+#    - name: run role for etcd
+#      include_role:
+#        name: etcd
+#      when: hostvar.service|selectattr("name", "equalto", "etcd")|list|length != 0
+
 
 ###########   Run Rolebooks for host   #############
 #  - name: run etcd role

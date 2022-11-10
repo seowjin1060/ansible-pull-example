@@ -1,0 +1,4 @@
+- name: pull etcd
+  ansible.builtin.git:
+    repo: "https://github.com/apache/apisix.git"
+    dest: /usr/local/apisix/

@@ -3,5 +3,7 @@ ip: 127.0.0.1
 service:
   - name: "apisix"
   - name: "etcd"
+apisix:
+  node_port: 9081
 prometheus: false
 import_test: true

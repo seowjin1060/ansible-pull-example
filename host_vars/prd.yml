@@ -7,5 +7,5 @@ dev_groups:
   etcd
 
 prd:
-  apisix 
+  apisix  
   etcd
